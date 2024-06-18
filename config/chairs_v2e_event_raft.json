@@ -1,0 +1,52 @@
+{
+    "name": "chairs_raft_v2e_event",
+    "cuda": true,
+    "gpu": [0,1],
+    "key_kernels": 6,
+    "filter_size": 3, 
+    "save_dir": "train_chairs_only_raft",
+    "img_size": [384, 512],
+    "data_loader": {
+        "train": {
+            "args": {
+                "batch_size": 16,
+                "shuffle": true,
+                "sequence_length": 1,
+                "num_voxel_bins": 5,
+                "eval_type":"dense",
+                "transforms": [
+                    "EventSequenceToVoxelGrid_Pytorch(num_bins=5, normalize=True, gpu=True)"
+                ],
+                "aug_params":{
+                    "crop_size": [368, 496], 
+                    "min_scale": -0.1, 
+                    "max_scale": 1.0, 
+                    "do_flip": true
+                }
+            }
+        },
+        "test": {
+            "args": {
+                "batch_size": 1,
+                "shuffle": false,
+                "sequence_length": 1,
+                "num_voxel_bins": 5,
+                "align_to": "images",
+                "eval_type":"dense",
+                "transforms": [
+                    "EventSequenceToVoxelGrid_Pytorch(num_bins=5, normalize=True, gpu=True)",
+                    "RandomCropping(crop_height=256, crop_width=256, fixed=True)"
+                ]
+            }
+        }
+    },
+    "train":{
+        "lr": 0.0002,
+        "wdecay": 0.0005,
+        "epsilon": 1e-8,
+        "num_steps": 1000000,
+        "mixed_precision": true,
+        "gamma": 0.8,
+        "clip": 1.0
+    }
+}

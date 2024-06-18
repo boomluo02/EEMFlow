@@ -1,0 +1,171 @@
+absl-py==1.2.0
+astroid @ file:///tmp/build/80754af9/astroid_1613500851753/work
+async-timeout==4.0.2
+awscli==1.25.34
+backcall==0.2.0
+balls==0.0.113
+boto3==1.24.34
+botocore==1.27.34
+brainpp==2.1.0
+brotlipy==0.7.0
+cached-property @ file:///home/conda/feedstock_root/build_artifacts/cached_property_1615209429212/work
+cachetools==5.2.0
+certifi==2022.6.15
+cffi==1.15.1
+chardet==3.0.4
+charset-normalizer==2.1.0
+click==8.1.3
+cloudpickle @ file:///tmp/build/80754af9/cloudpickle_1598884132938/work
+colorama==0.4.4
+coloredlogs==15.0.1
+confluent-kafka==1.9.0
+cryptography==37.0.4
+cycler==0.10.0
+cytoolz==0.11.0
+dask @ file:///tmp/build/80754af9/dask-core_1602083700509/work
+dataclasses==0.6
+decorator==4.4.2
+Deprecated==1.2.13
+dill==0.3.6
+dnspython==2.3.0
+docutils==0.16
+dotmap==1.3.30
+DPFlow==0.2.1
+dulwich==0.20.45
+durationpy==0.5
+einops==0.5.0
+elasticsearch==7.17.4
+esim-torch @ file:///data/home/luoxinglong/workspace/rpg_vid2e/esim_torch
+et-xmlfile==1.1.0
+filelock==3.9.0
+Flask==2.1.3
+flowvid @ git+https://github.com/diegoroyo/flowvid/@e4e4b8a21431dd4c427421feef33b2dbe45f807f
+future==0.18.3
+gitdb @ file:///tmp/build/80754af9/gitdb_1617117951232/work
+gitignore-parser==0.0.8
+GitPython @ file:///tmp/build/80754af9/gitpython_1614615697775/work
+google-auth==2.9.1
+google-auth-oauthlib==0.4.6
+grpcio==1.47.0
+h5py @ file:///home/conda/feedstock_root/build_artifacts/h5py_1604753641401/work
+huggingface-hub==0.12.1
+humanfriendly==10.0
+idna==3.3
+imageio @ file:///tmp/build/80754af9/imageio_1594161405741/work
+importlib-metadata==4.12.0
+influxdb==5.3.1
+ipdb==0.13.9
+ipython==7.34.0
+isort @ file:///tmp/build/80754af9/isort_1616355431277/work
+itsdangerous==2.1.2
+jedi==0.18.1
+Jinja2==3.1.2
+jmespath==1.0.1
+juicefs==0.0.4
+kiwisolver==1.2.0
+kubernetes==24.2.0
+lazy-object-proxy @ file:///tmp/build/80754af9/lazy-object-proxy_1616529086024/work
+llvmlite==0.36.0
+loguru==0.6.0
+lovelive-sdk==1.82.59
+lz4==4.3.2
+Markdown==3.4.1
+MarkupSafe==2.1.1
+matplotlib @ file:///home/conda/feedstock_root/build_artifacts/matplotlib-suite_1617212792183/work
+matplotlib-inline==0.1.3
+mccabe==0.6.1
+megfile==0.1.2
+mkl-fft==1.2.0
+mkl-random==1.0.4
+mkl-service==2.3.0
+mock==4.0.2
+msgpack==1.0.4
+netifaces==0.11.0
+networkx @ file:///tmp/build/80754af9/networkx_1598376031484/work
+nori2==1.12.1
+numba==0.53.1
+numexpr==2.7.1
+numpy==1.21.6
+nvidia-ml-py3==7.352.0
+oauthlib==3.2.0
+olefile==0.46
+openpyxl==3.0.10
+packaging==21.3
+pandas==1.2.3
+parso==0.8.3
+pexpect==4.8.0
+pickleshare==0.7.5
+Pillow @ file:///tmp/build/80754af9/pillow_1602788700959/work
+# Editable install with no version control (pointnet2==0.0.0)
+-e /data/home/luoxinglong/workspace/EvPoint/pointnet2
+prompt-toolkit==3.0.30
+protobuf==3.19.4
+psutil==5.9.1
+ptyprocess==0.7.0
+pyasn1==0.4.8
+pyasn1-modules==0.2.8
+pycparser==2.21
+Pygments==2.12.0
+PyJWT==2.4.0
+pylint @ file:///tmp/build/80754af9/pylint_1617135828964/work
+pymongo==4.3.3
+Pympler==1.0.1
+pyOpenSSL @ file:///tmp/build/80754af9/pyopenssl_1594392929924/work
+pyparsing==3.0.9
+pypng==0.20220715.0
+PyQt5==5.12.3
+PyQt5-sip==4.19.18
+PyQtChart==5.12
+PyQtWebEngine==5.12.1
+Pyro4==4.82
+PySocks @ file:///tmp/build/80754af9/pysocks_1594394576006/work
+python-dateutil==2.8.2
+python-statemachine==0.8.0
+pytz==2022.1
+PyWavelets @ file:///tmp/build/80754af9/pywavelets_1601658308664/work
+PyYAML==5.4.1
+pyzmq==25.0.2
+redis==4.3.4
+refile==6.0.4
+requests==2.28.1
+requests-oauthlib==1.3.1
+rrun==1.12.2
+rsa==4.7.2
+ruamel.yaml @ file:///home/conda/feedstock_root/build_artifacts/ruamel.yaml_1610291373612/work
+ruamel.yaml.clib @ file:///home/conda/feedstock_root/build_artifacts/ruamel.yaml.clib_1610146839777/work
+s3transfer==0.6.0
+scikit-image==0.17.2
+scipy @ file:///tmp/build/80754af9/scipy_1597686620742/work
+serpent==1.41
+six==1.16.0
+smart-open==6.0.0
+smmap @ file:///tmp/build/80754af9/smmap_1611517644793/work
+spatial-correlation-sampler==0.4.0
+tables @ file:///home/conda/feedstock_root/build_artifacts/pytables_1610156103160/work
+tabulate==0.8.10
+tensorboard==2.9.1
+tensorboard-data-server==0.6.1
+tensorboard-plugin-wit==1.8.1
+thop==0.1.1.post2209072238
+tifffile==2020.10.1
+timm==0.8.11.dev0
+token-bucket==0.3.0
+toml @ file:///tmp/build/80754af9/toml_1616166611790/work
+toolz @ file:///tmp/build/80754af9/toolz_1601054250827/work
+torch==1.7.0
+torchsummary==1.5.1
+torchvision==0.8.1
+tornado==6.0.4
+tqdm==4.64.0
+traitlets==5.3.0
+typed-ast @ file:///tmp/build/80754af9/typed-ast_1610484562261/work
+typeguard==2.13.3
+typing-extensions==4.3.0
+ujson==5.4.0
+urllib3==1.26.10
+wcwidth==0.2.5
+websocket-client==1.3.3
+Werkzeug==2.1.2
+wrapt==1.14.1
+yacs==0.1.8
+zipp==3.8.1

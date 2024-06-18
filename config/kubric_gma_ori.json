@@ -1,0 +1,63 @@
+{
+    "name": "kubric_GMA_ori",
+    "cuda": true,
+    "gpu": [0],
+    "key_kernels": 6,
+    "filter_size": 3, 
+    "save_dir": "train_kubric_gma",
+    "train_img_size": [480, 480],
+    "val_img_size": [480, 640],
+    "data_loader": {
+        "train": {
+            "args": {
+                "batch_size": 8,
+                "shuffle": true,
+                "sequence_length": 1,
+                "num_voxel_bins": 5,
+                "eval_type":"dense",
+                "transforms": [
+                    "EventSequenceToVoxelGrid_Pytorch(num_bins=5, normalize=True, gpu=True)"
+                ],
+                "aug_params":{
+                    "crop_size": [480, 480], 
+                    "min_scale": -0.1, 
+                    "max_scale": 1.0, 
+                    "do_flip": true
+                }
+            }
+        },
+        "test": {
+            "args": {
+                "batch_size": 1,
+                "shuffle": false,
+                "sequence_length": 1,
+                "num_voxel_bins": 5,
+                "align_to": "images",
+                "eval_type":"dense",
+                "datasets": {
+                    "outdoor_day": [
+                        1
+                    ]
+                },
+                "filter": {
+                    "outdoor_day": {
+                        "1": "range(10167,10954)"
+                    }
+                },
+                "transforms": [
+                    "EventSequenceToVoxelGrid_Pytorch(num_bins=5, normalize=True, gpu=True)",
+                    "RandomCropping(crop_height=256, crop_width=256, fixed=True)"
+                ]
+            }
+        }
+    },
+    "train":{
+        "lr": 0.00002,
+        "wdecay": 0.00005,
+        "epsilon": 1e-8,
+        "num_steps": 1000000,
+        "mixed_precision": true,
+        "gamma": 0.9,
+        "clip": 1.0
+    }
+}

@@ -1,0 +1,47 @@
+{
+    "name": "image_flow",
+    "cuda": true,
+    "gpu": [0,1],
+    "save_dir": "train_fastflow",
+    "train_img_size": [512, 960],
+    "val_img_size": [720, 1280],
+    "data_loader": {
+        "train": {
+            "args": {
+                "batch_size": 6,
+                "shuffle": true,
+                "sequence_length": 1,
+                "num_voxel_bins": 3,
+                "eval_type":"dense",
+                "transforms": [
+                    "EventSequenceToVoxelGrid_Pytorch(num_bins=5, normalize=True, gpu=True)"
+                ],
+                "aug_params":{
+                    "crop_size": [512, 960], 
+                    "min_scale": -0.1, 
+                    "max_scale": 1.0, 
+                    "do_flip": true
+                }
+            }
+        },
+        "test": {
+            "args": {
+                "batch_size": 1,
+                "shuffle": false,
+                "sequence_length": 1,
+                "num_voxel_bins": 3,
+                "align_to": "images",
+                "eval_type":"dense"
+            }
+        }
+    },
+    "train":{
+        "lr": 0.0001,
+        "wdecay": 5e-5,
+        "epsilon": 1e-8,
+        "num_steps": 1000000,
+        "mixed_precision": true,
+        "gamma": 0.8,
+        "clip": 1.0
+    }
+}
