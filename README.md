@@ -24,7 +24,7 @@ python loader/MVSEC_encoder.py --only_event
 ```
 
 ### HREM
-This work proposed a Multi Density Rendered (HREM) event optical flow dataset, you can download it from https://pan.baidu.com/s/1iSgGCjDask-M_QqPRtaLhA?pwd=z52j . We also provide code for batch organizing HREM datasets.
+This work proposed  a large-scale High-Resolution Event Meshflow (HREM) dataset (HREM), you can download it from https://pan.baidu.com/s/1iSgGCjDask-M_QqPRtaLhA?pwd=z52j .
 
 ## Evaluate
 ### Pretrained Weights
