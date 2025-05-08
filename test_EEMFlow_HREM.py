@@ -59,7 +59,7 @@ def train(args):
     device = torch.device("cuda") if torch.cuda.is_available() else torch.device("cpu")
     print("Using device: {}".format(device))
 
-    states = torch.load(os.path.join(proc_path, 'checkpoints', 'ckpt_{}.pth.tar'.format(args.input_type)))
+    states = torch.load(os.path.join(proc_path, 'checkpoints', 'EEMFlow_HREM_{}.pth.tar'.format(args.input_type)))
     state_dict = {}
     for key, param in states['state_dict'].items():
         state_dict.update({key.replace('module.', ''): param})

@@ -639,34 +639,9 @@ class file_tools():
                 event = np.frombuffer(byte_data, data_type)
                 return event
 
-        # filepath: local dir，target: target dir on oss, here I set my oss path: 's3://luokunming/Optical_Flow_all', you may change to yours
-        @classmethod
-        def save_file_to_oss(cls, file_path, target_path):
-            # os.system('alias oss="aws --endpoint-url=http://oss.hh-b.brainpp.cn s3"')
-            # target_path = os.path.join('s3://luokunming/Optical_Flow_all/datasets', target, os.path.basename(file_path))
-            # target_path = 's3://luokunming/Optical_Flow_all/datasets_v2/%s/%s' % (target, os.path.basename(file_path))
-            os.system('aws --endpoint-url=http://oss.hh-b.brainpp.cn s3 cp %s %s' % (file_path, target_path))
-            return target_path
-
-        # output command line to upload files to oss
-        @classmethod
-        def save_filedir_to_oss(cls, file_dir_path, target):
-            # os.system('alias oss="aws --endpoint-url=http://oss.hh-b.brainpp.cn s3"')
-            # target_path = os.path.join('s3://luokunming/Optical_Flow_all/datasets', target, os.path.basename(file_dir_path))
-            target_path = 's3://luokunming/Optical_Flow_all/datasets_v2/%s/%s' % (target, os.path.basename(file_dir_path))
-            os.system('aws --endpoint-url=http://oss.hh-b.brainpp.cn s3 sync %s %s' % (file_dir_path, target_path))
-            return target_path
-
         # speed up nori
         @classmethod
         def nori_speedup_file(cls, file_path):
-            '''
-                    nori speedup file_path --on --replica 6
-            sintel train数据加速
-            nori speedup s3://luokunming/Optical_Flow_all/datasets/Sintel_training_set/traning_set.nori --on --replica 6
-            sintel raw数据加速
-            nori speedup s3://luokunming/Optical_Flow_all/datasets/Sintel_raw_dataset/traning_set.nori--on --replica 6
-            '''
             print(file_path + ' speed up!!!!!!!!!!!')
             os.system('nori speedup ' + file_path + ' --on' + ' --replica 6')
 
@@ -725,7 +700,7 @@ class file_tools():
         @classmethod
         def demo(cls):
             # === save nori files direcctly to oss
-            nori_path = 's3://luokunming/temp.nori'
+            nori_path = ''
             data_ls = [np.zeros((10, 10, 3)), ]
             nsaver = file_tools.Nori_tools.Nori_saver(out_nori_path=nori_path, if_remote=True)
             nsaver.start()
@@ -1823,25 +1798,6 @@ class tensor_tools():
                 data['masks_f'] = masks_f
                 return data
 
-        @classmethod
-        def demo(cls):
-            import pickle
-            import cv2
-            im0 = cv2.imread("/data/luokunming/Optical_Flow_all/projects/Forward-Warp-master/test/im0.png")[np.newaxis, :, :, :]
-            im1 = cv2.imread("/data/luokunming/Optical_Flow_all/projects/Forward-Warp-master/test/im1.png")[np.newaxis, :, :, :]
-            mask = np.ones((1, 1, im1.shape[1], im1.shape[2]))
-            with open("/data/luokunming/Optical_Flow_all/projects/Forward-Warp-master/test/flow.pkl", "rb+") as f:
-                flow = pickle.load(f)
-            im0 = torch.FloatTensor(im0).permute(0, 3, 1, 2)
-            im1 = torch.FloatTensor(im1).permute(0, 3, 1, 2)
-            mask = torch.FloatTensor(mask)  # .permute(0, 3, 1, 2)
-            flow = torch.FloatTensor(flow)
-            flow = flow.permute(0, 3, 1, 2)
-            tensor_tools.check_tensor(im0, 'im0')
-            tensor_tools.check_tensor(im1, 'im1')
-            tensor_tools.check_tensor(flow, 'flow')
-            tensor_tools.check_tensor(mask, 'mask')
-
             class config():
                 def __init__(self):
                     self.add_noise = False
@@ -2206,25 +2162,6 @@ class tensor_tools():
                 data['flows_f'] = flows_f
                 data['masks_f'] = masks_f
                 return data
-
-        @classmethod
-        def demo(cls):
-            import pickle
-            import cv2
-            im0 = cv2.imread("/data/luokunming/Optical_Flow_all/projects/Forward-Warp-master/test/im0.png")[np.newaxis, :, :, :]
-            im1 = cv2.imread("/data/luokunming/Optical_Flow_all/projects/Forward-Warp-master/test/im1.png")[np.newaxis, :, :, :]
-            mask = np.ones((1, 1, im1.shape[1], im1.shape[2]))
-            with open("/data/luokunming/Optical_Flow_all/projects/Forward-Warp-master/test/flow.pkl", "rb+") as f:
-                flow = pickle.load(f)
-            im0 = torch.FloatTensor(im0).permute(0, 3, 1, 2)
-            im1 = torch.FloatTensor(im1).permute(0, 3, 1, 2)
-            mask = torch.FloatTensor(mask)  # .permute(0, 3, 1, 2)
-            flow = torch.FloatTensor(flow)
-            flow = flow.permute(0, 3, 1, 2)
-            tensor_tools.check_tensor(im0, 'im0')
-            tensor_tools.check_tensor(im1, 'im1')
-            tensor_tools.check_tensor(flow, 'flow')
-            tensor_tools.check_tensor(mask, 'mask')
 
             class config():
                 def __init__(self):

@@ -320,11 +320,8 @@ class Test(object):
 
         n_points = EE.shape[0]
 
-        # thresh = 1.
-        # percent_1_AEE = float((EE < thresh).sum() / float(EE.shape[0] + 1e-5)
-
-        thresh = 3.
-        percent_1_AEE = float(((EE < thresh) | (EE < 0.05*EE_gt)).sum()) / float(EE.shape[0] + 1e-5)
+        thresh = 1.
+        percent_1_AEE = float((EE < thresh).sum() / float(EE.shape[0] + 1e-5))
 
         thresh = 3.
 

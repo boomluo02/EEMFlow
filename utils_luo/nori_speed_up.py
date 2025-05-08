@@ -205,9 +205,7 @@ if __name__ == '__main__':
     session_name = 'speedup'
 
     speedup_num = 16
-    speedup_nori = 's3://xinglong/ct005/only_move_camera_dt4'
-    speedup_nori = 's3://ev-lxl/kubirc/room_ct005/only_move_camera_dt4'
-    speedup_nori = 's3://ev-lxl/kubirc/road_ct005/only_move_camera_dt4'
+    speedup_nori = ''
 
     command_str = 'conda activate eRaft\n'
     line_ls = [] 
